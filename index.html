@@ -5,21 +5,32 @@
   <title>Kimmel Monologue</title>
   <style>
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       text-align: center;
-      margin-top: 30px;
+      margin: 0;
+      padding: 20px;
     }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
     audio {
       display: block;
-      margin: 20px auto;
-      z-index: 10;
-      position: relative;
+      margin: 40px auto;   /* padding above & below */
+      padding: 20px;       /* extra breathing room */
+      background: #fff;    /* ensures it’s clear on all backgrounds */
+      border-radius: 8px;
+      max-width: 90%;
     }
+
     img {
       max-width: 400px;
       width: 100%;
+      height: auto;
       border-radius: 12px;
-      margin-top: 30px;
+      display: block;
+      margin: 60px auto 0 auto; /* big margin so it won’t overlap audio */
     }
   </style>
 </head>
