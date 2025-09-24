@@ -12,19 +12,12 @@
     }
 
     h1 {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .audio-wrapper {
       min-height: 120px;   /* safe zone for iOS player */
       margin-bottom: 30px;
-    }
-
-    .audio-instruction {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 15px;
-      color: #333;
     }
 
     audio {
@@ -43,13 +36,20 @@
       margin: 0 auto;
       cursor: pointer; /* show finger pointer */
     }
+
+    .audio-instruction {
+      font-size: 24px;     /* bigger text */
+      font-weight: bold;
+      margin-top: 20px;    /* spacing below image */
+      color: #222;
+    }
   </style>
 </head>
 <body>
   <h1>Jimmy Kimmel's Message To The Betting League</h1>
 
+  <!-- Audio Player -->
   <div class="audio-wrapper">
-    <div class="audio-instruction">👉 Tap Jimmy Kimmel to listen</div>
     <audio id="kimmel-audio" controls>
       <source src="kimmel.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
@@ -58,6 +58,9 @@
 
   <!-- Image of Jimmy Kimmel -->
   <img src="kimmel.jpg" alt="Jimmy Kimmel" id="kimmel-img">
+
+  <!-- Instruction below the image -->
+  <div class="audio-instruction">👉 Tap Jimmy Kimmel to listen</div>
 
   <script>
     const audio = document.getElementById('kimmel-audio');
