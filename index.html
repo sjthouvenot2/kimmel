@@ -12,17 +12,26 @@
     }
 
     h1 {
-      margin-bottom: 40px;
+      margin-bottom: 20px;
+    }
+
+    .audio-wrapper {
+      min-height: 120px;   /* safe zone for iOS player */
+      margin-bottom: 30px;
+    }
+
+    .audio-instruction {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #333;
     }
 
     audio {
+      width: 90%;
+      max-width: 400px;
       display: block;
-      margin: 40px auto;       /* spacing */
-      padding: 20px;           /* breathing room */
-      background: #fff;        /* ensures visibility */
-      border-radius: 8px;
-      max-width: 90%;
-      width: 400px;            /* consistent width */
+      margin: 0 auto 20px auto;
     }
 
     img {
@@ -31,21 +40,36 @@
       height: auto;
       border-radius: 12px;
       display: block;
-      margin: 60px auto 0 auto; /* keeps it well below the audio */
+      margin: 0 auto;
+      cursor: pointer; /* show finger pointer */
     }
   </style>
 </head>
 <body>
   <h1>Jimmy Kimmel's Message To The Betting League</h1>
 
-  <!-- Audio Player -->
-  <audio controls>
-    <source src="kimmel.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  <div class="audio-wrapper">
+    <div class="audio-instruction">👉 Tap Jimmy Kimmel to listen</div>
+    <audio id="kimmel-audio" controls>
+      <source src="kimmel.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
 
-  <!-- Image -->
-  <img src="kimmel.jpg" alt="Jimmy Kimmel">
+  <!-- Image of Jimmy Kimmel -->
+  <img src="kimmel.jpg" alt="Jimmy Kimmel" id="kimmel-img">
 
+  <script>
+    const audio = document.getElementById('kimmel-audio');
+    const img = document.getElementById('kimmel-img');
+
+    img.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    });
+  </script>
 </body>
 </html>
