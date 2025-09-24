@@ -5,18 +5,30 @@
   <title>Kimmel Monologue</title>
   <style>
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       text-align: center;
-      margin-top: 100px;
+      margin: 0;
+      padding: 20px;
     }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    /* Audio player always on its own line, spaced */
     audio {
       display: block;
-      margin: 0 auto 40px auto; /* space below audio */
-      max-width: 90%; /* keeps it visible on small screens */
+      margin: 0 auto 50px auto;
+      max-width: 100%;
+      z-index: 10;       /* force on top */
+      position: relative;
     }
+
+    /* Image below, responsive */
     img {
       max-width: 400px;
-      width: 90%;
+      width: 100%;
+      height: auto;
       border-radius: 12px;
       display: block;
       margin: 0 auto;
@@ -27,17 +39,13 @@
   <h1>Jimmy Kimmel's Message To The Betting League</h1>
 
   <!-- Audio Player -->
-  <div>
-    <audio controls>
-      <source src="kimmel.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </div>
+  <audio controls>
+    <source src="kimmel.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
   <!-- Image of Jimmy Kimmel -->
-  <div>
-    <img src="kimmel.jpg" alt="Jimmy Kimmel">
-  </div>
+  <img src="kimmel.jpg" alt="Jimmy Kimmel">
 
 </body>
 </html>
