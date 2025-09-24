@@ -17,11 +17,12 @@
 
     audio {
       display: block;
-      margin: 40px auto;   /* padding above & below */
-      padding: 20px;       /* extra breathing room */
-      background: #fff;    /* ensures it’s clear on all backgrounds */
+      margin: 40px auto;       /* spacing */
+      padding: 20px;           /* breathing room */
+      background: #fff;        /* ensures visibility */
       border-radius: 8px;
       max-width: 90%;
+      width: 400px;            /* consistent width */
     }
 
     img {
@@ -30,7 +31,7 @@
       height: auto;
       border-radius: 12px;
       display: block;
-      margin: 60px auto 0 auto; /* big margin so it won’t overlap audio */
+      margin: 60px auto 0 auto; /* keeps it well below the audio */
     }
   </style>
 </head>
@@ -43,7 +44,8 @@
     Your browser does not support the audio element.
   </audio>
 
-
+  <!-- Image -->
+  <img src="kimmel.jpg" alt="Jimmy Kimmel">
 
 </body>
 </html>
