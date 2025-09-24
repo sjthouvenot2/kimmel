@@ -8,41 +8,43 @@
       font-family: Arial, sans-serif;
       text-align: center;
       margin: 0;
-      padding: 20px;
+      padding: 0;
     }
 
     h1 {
-      margin-bottom: 30px;
+      margin: 80px 20px 30px 20px; /* leaves room under the pinned audio */
     }
 
-    /* Audio player always on its own line, spaced */
+    /* Audio player pinned at top */
     audio {
-      display: block;
-      margin: 0 auto 50px auto;
-      max-width: 100%;
-      z-index: 10;       /* force on top */
-      position: relative;
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      background: white; /* background so image can't overlap */
+      padding: 5px;
+      border-radius: 6px;
     }
 
-    /* Image below, responsive */
     img {
       max-width: 400px;
-      width: 100%;
+      width: 90%;
       height: auto;
       border-radius: 12px;
       display: block;
-      margin: 0 auto;
+      margin: 40px auto;
     }
   </style>
 </head>
 <body>
-  <h1>Jimmy Kimmel's Message To The Betting League</h1>
-
-  <!-- Audio Player -->
+  <!-- Audio Player (always visible at top) -->
   <audio controls>
     <source src="kimmel.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
+
+  <h1>Jimmy Kimmel's Message To The Betting League</h1>
 
   <!-- Image of Jimmy Kimmel -->
   <img src="kimmel.jpg" alt="Jimmy Kimmel">
